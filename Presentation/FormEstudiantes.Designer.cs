@@ -90,6 +90,7 @@
             this.dataEst.Name = "dataEst";
             this.dataEst.Size = new System.Drawing.Size(475, 434);
             this.dataEst.TabIndex = 2;
+            this.dataEst.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEst_CellContentClick);
             // 
             // label2
             // 

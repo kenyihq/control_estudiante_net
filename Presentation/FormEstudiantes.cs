@@ -23,12 +23,47 @@ namespace Presentation
             InitializeComponent();
         }
 
+        private void MensajeConfirmacion(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Registro de Estudiantes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void MensajeError(string Mensaje)
+        {
+            MessageBox.Show(Mensaje, "Registro de Estudiantes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void MostrarRegistro()
+        {
+            dataEst.DataSource = n_estudiante.MostrarResgistro();
+        }
+
+        public void LimpiarCajas()
+        {
+            Editar = false;
+            pNombre.Text = "";
+            sNombre.Text = "";
+            pApellido.Text = "";
+            sApellido.Text = "";
+            tel.Text = "";
+            cel.Text = "";
+            direccion.Text = "";
+            email.Text = "";
+            nac.Text = "";
+            obs.Text = "";
+            pNombre.Focus();
+        }
         private void closePic_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void FormEstudiantes_Load(object sender, EventArgs e)
+        {
+            MostrarRegistro();
+        }
+
+        private void dataEst_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

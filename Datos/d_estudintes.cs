@@ -78,6 +78,22 @@ namespace Datos
 
             conectar.Close();
 
+        }
+
+        public void EliminarEstudinte(Estudiantes estud)
+        {
+            SqlCommand SqlCmd = new SqlCommand("eliminar_estudiante", conectar)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            conectar.Open();
+
+            SqlCmd.Parameters.AddWithValue("@id_estudiante", estud.id_est);
+
+            SqlCmd.ExecuteNonQuery();
+
+            conectar.Close();
 
         }
     }
